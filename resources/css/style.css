@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 html {
@@ -33,17 +33,16 @@ header {
     transform: translate(-50%, -50%);
 }*/
 
-
-.d3_graph{
-    margin-bottom: 20px;
+/*
+.d3_graph{    
     background-color: #00baff
 }
 
-.d3_graph2{
-    margin-bottom: 20px;
-    background-color: rgba(196, 0, 0, 0.52)
+.d3_graph2{    
+    background-color: rgba(196, 0, 0, 0.52)    
 }
 
+*/
 .container {
     width: 1140px;
     
@@ -53,4 +52,8 @@ header {
 
 .main-text{
     text-align: justify;
+}
+
+.axis .domain {
+  display: none;
 }

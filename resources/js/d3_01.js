@@ -4,13 +4,13 @@ var myData =[
 	{ name: "Edwin", age: 37, height: 1.85},
 	{ name: "Eliza", age: 32, height: 1.7},
 	{ name: "David", age: 3, height: 0.9},
-	{ name: "Santi", age: 7, height: 1.32},  
-	{ name: "Luchi", age: 1, height: 30},    
+	{ name: "Santi", age: 7, height: 1.32},
+	{ name: "Luchi", age: 1, height: 30},
 ]
-var width = 400,
-	height = 400,
-  barH = 20,
+var  barH = 15,
   margin = {left: 80, right: 20, top: 20, bottom: 20},
+	width = 800,
+	height = 400,
 	chart = d3.select("#chart")
 		.append("svg")
     .attr("width", width )
@@ -21,13 +21,13 @@ var width = 400,
    	.attr("class", "x axis"),
    yAxis = chart.append("g")
    	.attr("class", "y axis"),
-    
+
    widthScale = d3.scaleLinear()
     .range([0, width - margin.left -margin.right]),
    colorScale = d3.scaleOrdinal(d3.schemeCategory20),
    heightScale = d3.scaleBand()
    	.range([0, height -margin.top - margin.bottom]);
-   	
+
 
 
 function update(myData) {
@@ -45,19 +45,18 @@ function update(myData) {
     .attr("width",0);
 
 	// Actions for new + updated
-  ps.merge(psEnter) 
+  ps.merge(psEnter)
     .attr("y", function (d)  { return heightScale(d.name); })
     .style("fill", function (d, i) { return colorScale(d.name); })
     .attr("height", heightScale.bandwidth())
-    .transition().duration(2000)    
+    .transition().duration(2000)
     .attr("width", function (d) { return widthScale(d.age); });
 
 	// Actions for deleted items
   ps.exit().remove();
-  
-  
+
   xAxis.call(d3.axisTop(widthScale));
-  yAxis.call(d3.axisLeft(heightScale));  
+  yAxis.call(d3.axisLeft(heightScale));
 }
 
 update(myData);
