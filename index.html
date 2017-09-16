@@ -4,31 +4,47 @@
 
         <link rel="stylesheet" type="text/css" href="resources/css/style.css">        
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
-        <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>           
+        <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script> 
+        
      
-        <title>Omnifood - XXXXXX</title>
+        <title>Incautación de Estupefacientes - XXXXXX</title>
         
     </head>
     
     <body>        
-        <header>
-            <div class="hero-text-box">
-                <h1>Goodbye junk food. Hello super healthy meals.</h1>
-                <a href="#">I’m hungry</a>
-                <a href="#">Show me more</a>
-            </div>    
-            
-            <div class="d3_graph">
+         <div class="container">
+            <header>
+                
+                <div class="hero-text-box">
+                    <h1>Goodbye junk food. Hello super healthy meals.</h1>
+                    <p><a href="#">I’m hungry</a></p>
+                    <p><a href="#">Show me more</a></p>
+                </div>    
 
-                <form>
-                    <label><input type="radio" name="mode" value="grouped"> Grouped</label>
-                    <label><input type="radio" name="mode" value="stacked" checked> Stacked</label>
-                </form>
+                <h2>D3 Tutorial Step 9: Merge</h2>
+                
+                <div class="d3_graph">
+                    <div id="chart"></div>
+                    <script src="resources/js/d3_01.js"></script>
+                </div>
+                
+                <h2>HTML is amazing </h2>                
+                <p class="main-text">            
+                    A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now. When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray gleams steal into the inner sanctuary, I throw myself down among the tall grass by the trickling stream;
+                </p>
+                
+                <div class="d3_graph2">
+                    <form>
+                        <label><input type="radio" name="mode" value="grouped"> Grouped</label>
+                        <label><input type="radio" name="mode" value="stacked" checked> Stacked</label>
+                    </form>
 
-                <svg width="960" height="500"></svg>
-                <script src="resources/js/d3.js"></script>                        
-            
-            </div>
-        </header>
+                    <svg width="960" height="500"></svg>
+                    <script src="resources/js/d3_02.js"></script>
+
+                </div>
+                
+             </header>
+        </div>
     </body>
 </html>

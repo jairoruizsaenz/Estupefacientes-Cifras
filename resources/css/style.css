@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    margin-bottom: 20px;
 }
 
 html {
@@ -13,10 +14,6 @@ html {
     text-rendering: optimizeLegibility;
 }
 
-.row {
-    max-width: 1140px;
-    margin: 0 auto 0 auto; /* up right bottom left */    
-}
 
 /*
 header {
@@ -36,6 +33,24 @@ header {
     transform: translate(-50%, -50%);
 }*/
 
-h1 {
-    margin: 0;
+
+.d3_graph{
+    margin-bottom: 20px;
+    background-color: #00baff
+}
+
+.d3_graph2{
+    margin-bottom: 20px;
+    background-color: rgba(196, 0, 0, 0.52)
+}
+
+.container {
+    width: 1140px;
+    
+    /*margin: Top Right Button Left;  */   
+    margin: 20px  auto 0 auto; 
+}
+
+.main-text{
+    text-align: justify;
 }
