@@ -11,7 +11,7 @@ var  barH = 15,
   margin = {left: 80, right: 20, top: 20, bottom: 20},
 	width = 800,
 	height = 400,
-	chart = d3.select("#chart")
+	chart = d3.select(".d3_graph")
 		.append("svg")
     .attr("width", width )
     .attr("height", height)
