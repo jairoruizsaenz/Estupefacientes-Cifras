@@ -1,5 +1,5 @@
-var n = 4, // The number of series.
-    m = 58; // The number of values per series.
+var n = 5, // The number of series.
+    m = 32; // The number of values per series.
 
 // The xz array has m elements, representing the x-values shared by all series.
 // The yz array has n elements, representing the y-values of each of the n series.
@@ -11,7 +11,7 @@ var xz = d3.range(m),
     yMax = d3.max(yz, function(y) { return d3.max(y); }),
     y1Max = d3.max(y01z, function(y) { return d3.max(y, function(d) { return d[1]; }); });
 
-var svg = d3.select("#d3_graph"),
+var svg = d3.select("#d3_02_grafico"),
     margin = {top: 40, right: 10, bottom: 20, left: 10},
     width = +svg.attr("width") - margin.left - margin.right,
     height = +svg.attr("height") - margin.top - margin.bottom,
@@ -28,7 +28,7 @@ var y = d3.scaleLinear()
 
 var color = d3.scaleOrdinal()
     .domain(d3.range(n))
-    .range(d3.schemeCategory20c);
+    .range(d3.schemeCategory20b);
 
 var series = g.selectAll(".series")
   .data(y01z)
