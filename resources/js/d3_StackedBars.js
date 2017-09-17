@@ -1,20 +1,11 @@
 var svg = d3.select("#d3_01_grafico"),
-    margin = {top: 80, right: 20, bottom: 50, left: 40},
-    width = +svg.attr("width") - margin.left - margin.right,
-    height = +svg.attr("height") - margin.top - margin.bottom,
-    g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-    
-//Escala del eje x
-var widthScale = d3.scaleBand()    
-    .range([0, width])
-    .paddingInner(0.05)
-    .align(0.1);
-
-//Escala del eje y
-var heightScale = d3.scaleLinear().range([height,0]);
-
-//Se define la escala de colores
-var ColorScale = d3.scaleOrdinal(d3.schemeCategory20);
+    margin = {top: 20, right: 20, bottom: 50, left: 40},
+    width = svg.attr("width") - margin.left - margin.right,
+    height = svg.attr("height") - margin.top - margin.bottom,
+    g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")"),
+    widthScale = d3.scaleBand().range([0, width]).paddingInner(0.05).align(0.1),
+    heightScale = d3.scaleLinear().range([height,0]),
+    ColorScale = d3.scaleOrdinal(d3.schemeCategory20);
 
 //Carga del archivo de datos y cálculo de la cariable total
 d3.csv("resources/data/resumen_01.csv", function(d, i, columns) {
@@ -27,6 +18,7 @@ d3.csv("resources/data/resumen_01.csv", function(d, i, columns) {
     if (error) throw error;
     
     //Imprime los datos en la consola
+    console.log("resources/data/resumen_01.csv");
     console.log(data);
     
     //Se define la variable keys que corresponde a los valores numéricos
@@ -37,7 +29,7 @@ d3.csv("resources/data/resumen_01.csv", function(d, i, columns) {
     widthScale.domain(data.map(function(d) { return d.Iniciales; }));
     heightScale.domain([0, d3.max(data, function(d) { return d.total; })]).nice();
     ColorScale.domain(keys);
-
+    
     g.append("g")
         .selectAll("g")
         .data(d3.stack().keys(keys)(data))
