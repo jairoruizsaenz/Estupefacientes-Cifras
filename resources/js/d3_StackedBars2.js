@@ -2,7 +2,7 @@ var svg = d3.select("#d3_02_grafico"),
     margin = {top: 20, right: 20, bottom: 50, left: 40},
     width = +svg.attr("width") - margin.left - margin.right,
     height = +svg.attr("height") - margin.top - margin.bottom,
-    g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    g2 = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
     
 //Escala del eje x
 var widthScale = d3.scaleBand()
@@ -11,8 +11,7 @@ var widthScale = d3.scaleBand()
     .align(0.1);
 
 //Escala del eje y
-var heightScale = d3.scaleLinear()
-    .range([height, 0]);
+var heightScale = d3.scaleLinear().range([height, 0]);
 
 //Se define la escala de colores
 var ColorScale = d3.scaleOrdinal(d3.schemeCategory20);
@@ -39,7 +38,7 @@ d3.csv("resources/data/resumen_02.csv", function (d, i, columns) {
     heightScale.domain([0, d3.max(data, function(d) { return d.total; })]).nice();
     ColorScale.domain(keys);
 
-    g.append("g")
+    g2.append("g")
         .selectAll("g")
         .data(d3.stack().keys(keys)(data))
         .enter().append("g")
@@ -51,7 +50,7 @@ d3.csv("resources/data/resumen_02.csv", function (d, i, columns) {
             .attr("x", function(d) { return widthScale(d.data.Iniciales); })
             .attr("y", function(d) { return heightScale(d[1]); })    
             .attr("height", function(d) { return heightScale(d[0]) - heightScale(d[1]); })      
-            .attr("width", x.bandwidth())
+            .attr("width", widthScale.bandwidth())
             .on("mousemove", function(d){
                 tooltip                
               .style("left", d3.event.pageX + 50 + "px")
@@ -67,7 +66,7 @@ d3.csv("resources/data/resumen_02.csv", function (d, i, columns) {
     var tooltip = d3.select("body").append("div").attr("class", "toolTip");
         
     //Creación de las etiquetas del eje x
-    g.append("g")
+    g2.append("g")
         .attr("class", "axis")
         .attr("transform", "translate(0," + height + ")")    
         .call(d3.axisBottom(widthScale))
@@ -81,7 +80,7 @@ d3.csv("resources/data/resumen_02.csv", function (d, i, columns) {
         .attr("font-size","18px");
      
     //Creación de las etiquetas del eje y
-    g.append("g")
+    g2.append("g")
         .attr("class", "axis")
         .call(d3.axisLeft(heightScale).ticks(null, "s"))
     .append("text")
@@ -94,7 +93,7 @@ d3.csv("resources/data/resumen_02.csv", function (d, i, columns) {
         .attr("font-size","18px");
 
     //Caja de nomenclaturas
-    var legend = g.append("g")
+    var legend = g2.append("g")
         .attr("font-family", "sans-serif")
         .attr("font-size", 12)
         .attr("text-anchor", "end")

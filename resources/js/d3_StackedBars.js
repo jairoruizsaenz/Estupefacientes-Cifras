@@ -1,5 +1,5 @@
 var svg = d3.select("#d3_01_grafico"),
-    margin = {top: 20, right: 20, bottom: 50, left: 40},
+    margin = {top: 80, right: 20, bottom: 50, left: 40},
     width = +svg.attr("width") - margin.left - margin.right,
     height = +svg.attr("height") - margin.top - margin.bottom,
     g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
@@ -11,8 +11,7 @@ var widthScale = d3.scaleBand()
     .align(0.1);
 
 //Escala del eje y
-var heightScale = d3.scaleLinear()
-    .range([height,0]);
+var heightScale = d3.scaleLinear().range([height,0]);
 
 //Se define la escala de colores
 var ColorScale = d3.scaleOrdinal(d3.schemeCategory20);
@@ -51,7 +50,7 @@ d3.csv("resources/data/resumen_01.csv", function(d, i, columns) {
             .attr("x", function(d) { return widthScale(d.data.Iniciales); })
             .attr("y", function(d) { return heightScale(d[1]); })    
             .attr("height", function(d) { return heightScale(d[0]) - heightScale(d[1]); })      
-            .attr("width", x.bandwidth())
+            .attr("width", widthScale.bandwidth())
   			.on("mousemove", function(d){    				
                 tooltip                
               .style("left", d3.event.pageX + 50 + "px")
