@@ -41,11 +41,11 @@ d3.csv("resources/data/resumen_01.csv", function (d, i, columns) {
             .style("left", d3.event.pageX + 50 + "px")
             .style("top", d3.event.pageY - 50 +  "px")
             .style("display", "inline-block")
-            .html("<strong>Departamento:</strong> " + d.data.Departamento +"<br>" +
-                "<strong>Cantidad Incautada:</strong> " + d3.format(",d")((d[1] - d[0])/1000) + "Kg"+"<br>" +
-                "<strong>Cantidad Total Incautada:</strong> " + d3.format(",d")((d.data.total)/1000) + "Kg"+"<br>" +
-                "<strong>Porcentaje:</strong> " + d3.format(".1%")((d[1] - d[0])/d.data.total) +"<br>" +
-                "<strong>Posición a nivel nacional:</strong> " + (i + 1));
+            .html("<strong>Departamento: &nbsp; </strong> " + d.data.Departamento +"<br>" +
+                "<strong>Cantidad Incautada: &nbsp; </strong> " + d3.format(",d")((d[1] - d[0])/1000) + "Kg"+"<br>" +
+                "<strong>Cantidad Total Incautada: &nbsp; </strong> " + d3.format(",d")((d.data.total)/1000) + "Kg"+"<br>" +
+                "<strong>Porcentaje: &nbsp; </strong> " + d3.format(".1%")((d[1] - d[0])/d.data.total) +"<br>" +
+                "<strong>Posición a nivel nacional: &nbsp; </strong> " + (i + 1));
     };
     
     var tipMouseout1 = function(d) {

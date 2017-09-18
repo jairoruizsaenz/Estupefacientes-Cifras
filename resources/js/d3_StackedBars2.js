@@ -41,11 +41,11 @@ d3.csv("resources/data/resumen_02.csv", function (d, i, columns) {
             .style("left", d3.event.pageX + 50 + "px")
             .style("top", d3.event.pageY - 50 +  "px")
             .style("display", "inline-block")
-            .html("<strong>Departamento:</strong> " + d.data.Departamento +"<br>" +
-                "<strong>Número de Incautaciones:</strong> " + d3.format(",d")((d[1] - d[0]))+"<br>" +
-                "<strong>Número Total de Incautaciones:</strong> " + d3.format(",d")(d.data.total)+"<br>" +
-                "<strong>Porcentaje:</strong> " + d3.format(".1%")((d[1] - d[0])/d.data.total) +"<br>" +
-                "<strong>Posición a nivel nacional:</strong> " + (i + 1));
+            .html("<strong>Departamento: &nbsp;</strong> " + d.data.Departamento +"<br>" +
+                "<strong>Número de Incautaciones: &nbsp; </strong> " + d3.format(",d")((d[1] - d[0]))+"<br>" +
+                "<strong>Número Total de Incautaciones: &nbsp; </strong> " + d3.format(",d")(d.data.total)+"<br>" +
+                "<strong>Porcentaje: &nbsp;</strong> " + d3.format(".1%")((d[1] - d[0])/d.data.total) +"<br>" +
+                "<strong>Posición a nivel nacional: &nbsp; </strong> " + (i + 1));
     };
     
     var tipMouseout2 = function(d) {
