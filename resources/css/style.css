@@ -47,7 +47,7 @@ header {
     margin: 20px  auto 0 auto; 
 }
 
-.main-text{
+.main-text,p{
     text-align: justify;
 }
 
