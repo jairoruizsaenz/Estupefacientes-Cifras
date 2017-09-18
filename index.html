@@ -1,67 +1,77 @@
 <!DOCTYPE html>
 <html lang="sp">
     <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="resources/css/style.css">        
+        <meta charset="utf-8">        
+        <title>Estupefacientes, más que cifras</title>
+
+        <link rel="stylesheet" type="text/css" href="resources/css/style.css">
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
-        <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script> 
-                             
-        <title>Estupefacientes y Cifras</title>        
+        <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>        
     </head>
-    
+
     <body>        
-         <div class="container">
+        <div class="container">
             <header>
             </header>
-             
-            <div class="hero-text-box">
-                <h1>Estupefacientes y Cifras</h1>
-                <div>Por <a href="https://github.com/jairoruizsaenz" target="_blank">Jairo Ruiz Saenz</a></div>
 
+            <div class="hero-text-box">
+                <h1>Estupefacientes, más que cifras</h1>
+                
                 <!--
                 <p><a href="#">I’m hungry</a></p>
                 <p><a href="#">Show me more</a></p>
                 -->
-
             </div>    
-
-            <h2>Contexto</h2>
+            <br>
             <p class="main-text">            
-                A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now. When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray gleams steal into the inner sanctuary, I throw myself down among the tall grass by the trickling stream;
+                Desde finales de los años 60 Colombia a tenido una economía subterranea basada en el tráfico de estupefacientes tanto a nivel nacional como internacional, la cual a venido en crecimiento desde entonces; sin embargo, dada la reciente firma del acuerdo de paz con las Fuerzas Armadas Revolucionarias de Colombia - FARC y el constante trabajo de las fuerzas armadas colombianas, se espera que el nivel de producción y distribución de estupefacientes a nivel nacional disminuya. 
+                <br><br>
+                Dado lo anterior, se realizó un análisis mediante visualizaciones de la base de datos
+                <strong><a href="https://www.datos.gov.co/Seguridad-y-Defensa/Incautaci-n-estupefacientes-2016/hede-9b26" target="_blank">Incautación estupefacientes 2016</a></strong> disponible en el portal de <strong><a href="https://www.datos.gov.co/" target="_blank">Datos Abiertos de Colombia</a></strong>
+                 ,proporcionada por el Grupo Información de Criminalidad (GICRI) - DIJIN de la Policía Nacional, con el proposito de entender mejor el estado actual de como se distribuyen los estupefacientes a nivel nacional.
             </p>
 
-            <h2>Cifras</h2>                                             
-
-            <div class="grafica">
-                <svg id="d3_01_grafico" width="1140" height="500"></svg>                                             
-            </div>
-
+            <h2>Cifras</h2>
+            <div id="d3_01_grafico" class="grafica"></div>
 
             <p class="main-text">            
-                A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now. When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray gleams steal into the inner sanctuary, I throw myself down among the tall grass by the trickling stream;
+                Como primera aproximación a los datos, se procedio a visualizar la cantidad de estupefacientes incautados en el 2016 por cada departamento, de los cuales se debe prestar atención a los departamentos de Nariño, Antioquia y Valle del Cauca, en los cuales se incautaron 58 , 31 y 27 toneladas respectivamente.
+                <br><br>
+                En mayor detalle se tiene que en Nariño el 98,6% del total de estupefacientes incautados corresponden a Cocaina, en el departamento de Antioquia se presenta una distribución principalmente entre Cocaina con el 60,1% y Marihuana con el 33,9% de las incautaciones, por último, en el departamento del Valle del Cauca de la cantidad de estupefacientes incautados predominaron la Marihuana con el 57,6%, seguido por la Cocaina con un 38,7%.
             </p>
-
-            <div class="grafica">
-                <svg id="d3_02_grafico" width="1140" height="500"></svg>
-            </div>
-
-           <h2>Conclusiones</h2>                
+            <div id="d3_02_grafico" class="grafica"></div>
+            
             <p class="main-text">            
-                A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now. When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray gleams steal into the inner sanctuary, I throw myself down among the tall grass by the trickling stream;
+                Continuando con el análisis, se procedío a visualizar el número de incautaciones realizadas por departamento, nuevamente los departamentos de Antioquia y Valle del Cauca destacaron por contar con el mayor número de incautaciones, seguidos por Cundinamarca
             </p>
+            <div id="d3_03_grafico" class="grafica"></div>
+            
+            <h2>Conclusiones</h2>                
+            <p class="main-text">            
+                A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was 
+            </p>
+            
+            <h3>Principales hallazgos</h3>
+            <ul>
+                <li>
+                    <p>Al revisar los datos procesados observamos que el departamento del Atlántico es el que tiene el menor índice de riesgo mediano; por el contrario el departamento de Caldas se sitúa en último lugar en esta métrica de calidad del agua.</p>
+                </li>
+                <li>
+                    <p>Otros punto importante es que solo cuatro departamentos: Atlántico, Antioquia, Arauca y Quindío tienen una mediana por debajo del límite de riesgo de consumo para agua.</p>
+                </li>
+                <li>
+                    <p>Es interesante observar que solo algunas capitales departamentales aparecen en los departamentos como los lugares con el índice más bajo y, además, no todas las puntuaciones de las capitales que sí aparecen están por debajo del límite aceptable (por ejemplo, Bogotá y Pereira)</p>
+                </li>
+            </ul>
+                        
+            <script src="resources/js/d3_Variables.js"></script> 
+            <script src="resources/js/d3_StackedBars.js"></script>
+            <script src="resources/js/d3_StackedBars2.js"></script>   
+            <script src="resources/js/d3_ScatterPlot.js"></script>                             
 
-            <div class="grafica">
-                <div id="d3_03_grafico" ></div>
-            </div>
-             
-             <script src="resources/js/d3_Variables.js"></script>            
-             <script src="resources/js/d3_StackedBars.js"></script>            
-             <script src="resources/js/d3_StackedBars2.js"></script>            
-             <script src="resources/js/d3_ScatterPlot.js"></script>            
-             
-             <footer>
+            <footer>
+                <p><br><br>Estupefacientes, más que cifras es mantenido por<a href="https://github.com/jairoruizsaenz" target="_blank"><strong>Jairo Ruiz Saenz</strong></a>  -  Publicado con <a href="https://pages.github.com" target="_blank">GitHub Pages</a></p>                        
             </footer>
-
         </div>
     </body>
 </html>
