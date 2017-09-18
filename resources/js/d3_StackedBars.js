@@ -110,10 +110,18 @@ d3.csv("resources/data/resumen_01.csv", function (d, i, columns) {
     g1.append("text")
         .attr("class", "Titulo_grafica")
         .attr("transform", "translate(0,-20)")        
-        .text("Número de incautaciones realizadas por departamento")
+        .text("Gráfica 1. Cantidad de estupefacientes incautados por departamento")
         .attr("text-anchor","start");
         //.attr("y", heightScale2(heightScale2.ticks().pop()) + 0.5)
 
+    //Descripción de la gráfica
+    g1.append("text")
+        .attr("class", "axis_label")
+        .attr("class", "descripcion_grafica")
+        .attr("transform", "translate(0," + (heightScale1(d3.min(data, function(d) { return d.total; })) + 45)+ ")")   
+        .text("Fuente: Grupo Información de Criminalidad (GICRI) - DIJIN de la Policía Nacional")
+        .attr("text-anchor","start");
+            
 //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     

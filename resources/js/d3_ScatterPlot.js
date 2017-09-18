@@ -108,8 +108,16 @@ function(error, data){
     g3.append("text")
         .attr("class", "Titulo_grafica")
         .attr("transform", "translate(0,-20)")        
-        .text("Cantidad de estupefacientes incautados VS número de incautaciones")
+        .text("Gráfica 3. Cantidad de estupefacientes incautados VS número de incautaciones")
         .attr("text-anchor","start");
         //.attr("y", heightScale2(heightScale2.ticks().pop()) + 0.5)
 
+    //Descripción de la gráfica
+    g3.append("text")
+        .attr("class", "axis_label")
+        .attr("class", "descripcion_grafica")
+        .attr("transform", "translate(0," + (height3 - margin3.top - margin3.bottom + 45)+ ")")    
+        .text("Fuente: Grupo Información de Criminalidad (GICRI) - DIJIN de la Policía Nacional")
+        .attr("text-anchor","start");
+    
 });
